@@ -13,6 +13,10 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "CookingByNumbers", "Cooking
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "ModifyAverage", "ModifyAverage\ModifyAverage.njsproj", "{43630C78-1132-46A9-AF3D-8CD28B7997D5}"
 EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "ValidityChecker", "ValidityChecker\ValidityChecker.njsproj", "{64878086-7BA8-4F5D-A623-9B90F401980B}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "TreasureLocator", "TreasureLocator\TreasureLocator.njsproj", "{2C86A0DD-09E7-4A01-901A-7711F31AFBF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{43630C78-1132-46A9-AF3D-8CD28B7997D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43630C78-1132-46A9-AF3D-8CD28B7997D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43630C78-1132-46A9-AF3D-8CD28B7997D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64878086-7BA8-4F5D-A623-9B90F401980B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64878086-7BA8-4F5D-A623-9B90F401980B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64878086-7BA8-4F5D-A623-9B90F401980B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64878086-7BA8-4F5D-A623-9B90F401980B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C86A0DD-09E7-4A01-901A-7711F31AFBF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C86A0DD-09E7-4A01-901A-7711F31AFBF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C86A0DD-09E7-4A01-901A-7711F31AFBF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C86A0DD-09E7-4A01-901A-7711F31AFBF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

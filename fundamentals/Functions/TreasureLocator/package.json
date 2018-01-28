@@ -1,0 +1,9 @@
+{
+  "name": "treasure-locator",
+  "version": "0.0.0",
+  "description": "TreasureLocator",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}
