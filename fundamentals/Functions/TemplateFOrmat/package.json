@@ -1,0 +1,9 @@
+{
+  "name": "template-format",
+  "version": "0.0.0",
+  "description": "TemplateFOrmat",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

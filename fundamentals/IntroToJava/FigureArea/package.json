@@ -1,0 +1,9 @@
+{
+  "name": "figure-area",
+  "version": "0.0.0",
+  "description": "FigureArea",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

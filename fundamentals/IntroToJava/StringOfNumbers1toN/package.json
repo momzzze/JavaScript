@@ -1,0 +1,9 @@
+{
+  "name": "string-of-numbers1to-n",
+  "version": "0.0.0",
+  "description": "StringOfNumbers1toN",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

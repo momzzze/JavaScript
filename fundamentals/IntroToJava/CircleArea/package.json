@@ -1,0 +1,9 @@
+{
+  "name": "circle-area",
+  "version": "0.0.0",
+  "description": "CircleArea",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Hello,Java", "Hello,Java\Hello,Java.njsproj", "{1A84EE26-2F39-4999-9824-424BA4A01633}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "AreaAndPermitere", "AreaAndPermitere\AreaAndPermitere.njsproj", "{899CEF04-BC0B-4410-8172-7B91BEB50504}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A84EE26-2F39-4999-9824-424BA4A01633}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A84EE26-2F39-4999-9824-424BA4A01633}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A84EE26-2F39-4999-9824-424BA4A01633}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A84EE26-2F39-4999-9824-424BA4A01633}.Release|Any CPU.Build.0 = Release|Any CPU
+		{899CEF04-BC0B-4410-8172-7B91BEB50504}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{899CEF04-BC0B-4410-8172-7B91BEB50504}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{899CEF04-BC0B-4410-8172-7B91BEB50504}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{899CEF04-BC0B-4410-8172-7B91BEB50504}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66427267-A918-4A98-87B4-8028DE90DE3C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,9 @@
+{
+  "name": "odd-even",
+  "version": "0.0.0",
+  "description": "OddEven",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

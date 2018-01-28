@@ -1,0 +1,9 @@
+{
+  "name": "leap-year",
+  "version": "0.0.0",
+  "description": "LeapYear",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

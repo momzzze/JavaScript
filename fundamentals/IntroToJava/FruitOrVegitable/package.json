@@ -1,0 +1,9 @@
+{
+  "name": "fruit-or-vegitable",
+  "version": "0.0.0",
+  "description": "FruitOrVegitable",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

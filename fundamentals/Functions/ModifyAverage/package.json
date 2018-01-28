@@ -1,0 +1,9 @@
+{
+  "name": "modify-average",
+  "version": "0.0.0",
+  "description": "ModifyAverage",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

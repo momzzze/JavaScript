@@ -1,0 +1,9 @@
+{
+  "name": "speed-limit",
+  "version": "0.0.0",
+  "description": "SpeedLimit",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "cooking-by-numbers",
+  "version": "0.0.0",
+  "description": "CookingByNumbers",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

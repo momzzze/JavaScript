@@ -1,0 +1,9 @@
+{
+  "name": "filter-by-age",
+  "version": "0.0.0",
+  "description": "FilterByAge",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

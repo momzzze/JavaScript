@@ -1,0 +1,9 @@
+{
+  "name": "area-and-permitere",
+  "version": "0.0.0",
+  "description": "AreaAndPermitere",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

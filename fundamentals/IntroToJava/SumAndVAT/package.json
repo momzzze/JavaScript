@@ -1,0 +1,9 @@
+{
+  "name": "sum-and-vat",
+  "version": "0.0.0",
+  "description": "SumAndVAT",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "validity-checker",
+  "version": "0.0.0",
+  "description": "ValidityChecker",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

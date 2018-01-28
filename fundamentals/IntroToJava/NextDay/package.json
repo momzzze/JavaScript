@@ -1,0 +1,9 @@
+{
+  "name": "next-day",
+  "version": "0.0.0",
+  "description": "NextDay",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

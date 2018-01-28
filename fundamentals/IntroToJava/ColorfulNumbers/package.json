@@ -1,0 +1,9 @@
+{
+  "name": "colorful-numbers",
+  "version": "0.0.0",
+  "description": "ColorfulNumbers",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}
