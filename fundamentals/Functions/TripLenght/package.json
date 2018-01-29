@@ -1,0 +1,9 @@
+{
+  "name": "trip-lenght",
+  "version": "0.0.0",
+  "description": "TripLenght",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

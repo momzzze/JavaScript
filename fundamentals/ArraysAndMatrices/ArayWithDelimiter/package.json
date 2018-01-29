@@ -1,0 +1,9 @@
+{
+  "name": "aray-with-delimiter",
+  "version": "0.0.0",
+  "description": "ArayWithDelimiter",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

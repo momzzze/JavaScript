@@ -1,0 +1,9 @@
+{
+  "name": "add-remove-elements-from-array",
+  "version": "0.0.0",
+  "description": "AddRemoveElementsFromArray",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

@@ -17,6 +17,8 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "ValidityChecker", "Validity
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "TreasureLocator", "TreasureLocator\TreasureLocator.njsproj", "{2C86A0DD-09E7-4A01-901A-7711F31AFBF1}"
 EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "TripLength", "TripLenght\TripLength.njsproj", "{5DF1006D-F376-4930-B1D4-B22FD608DD04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{2C86A0DD-09E7-4A01-901A-7711F31AFBF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C86A0DD-09E7-4A01-901A-7711F31AFBF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C86A0DD-09E7-4A01-901A-7711F31AFBF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DF1006D-F376-4930-B1D4-B22FD608DD04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DF1006D-F376-4930-B1D4-B22FD608DD04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DF1006D-F376-4930-B1D4-B22FD608DD04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DF1006D-F376-4930-B1D4-B22FD608DD04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
