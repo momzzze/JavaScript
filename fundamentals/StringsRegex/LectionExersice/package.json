@@ -1,0 +1,9 @@
+{
+  "name": "lection-exersice",
+  "version": "0.0.0",
+  "description": "LectionExersice",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}
