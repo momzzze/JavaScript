@@ -1,0 +1,9 @@
+{
+  "name": "sort-an-array",
+  "version": "0.0.0",
+  "description": "SortAnArray",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

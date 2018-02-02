@@ -1,0 +1,9 @@
+{
+  "name": "spiral-matrix",
+  "version": "0.0.0",
+  "description": "SpiralMatrix",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

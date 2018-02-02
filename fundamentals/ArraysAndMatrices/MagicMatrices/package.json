@@ -1,0 +1,9 @@
+{
+  "name": "magic-matrices",
+  "version": "0.0.0",
+  "description": "MagicMatrices",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}
