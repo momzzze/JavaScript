@@ -1,0 +1,9 @@
+{
+  "name": "split-string-with-delimiter",
+  "version": "0.0.0",
+  "description": "SplitStringWIthDelimiter",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

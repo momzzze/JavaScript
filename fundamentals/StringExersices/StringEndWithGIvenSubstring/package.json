@@ -1,0 +1,9 @@
+{
+  "name": "string-end-with-given-substring",
+  "version": "0.0.0",
+  "description": "StringEndWithGIvenSubstring",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

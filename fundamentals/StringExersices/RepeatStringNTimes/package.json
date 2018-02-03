@@ -1,0 +1,9 @@
+{
+  "name": "repeat-string-ntimes",
+  "version": "0.0.0",
+  "description": "RepeatStringNTimes",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

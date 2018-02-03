@@ -1,0 +1,9 @@
+{
+  "name": "string-exersices",
+  "version": "0.0.0",
+  "description": "StringExersices",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

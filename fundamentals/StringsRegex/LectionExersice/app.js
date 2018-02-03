@@ -69,7 +69,7 @@
     let sum=arr.filter((str,i)=>i%2!==0).map(str=>Number(str)).reduce((a,b)=>a+b)
     console.log(`You purchased ${products} for a total sum of ${sum}`)
 }*/
-
+/*
 function name(arr) {
     let finalResult=[]
     for (let i = 0; i < arr.length; i++) {
@@ -84,3 +84,17 @@ function name(arr) {
     }console.log(finalResult.join(', '))
 }
 name(['peshoo@gmail.com', 'todor_43@mail.dir.bg','foo@bar.com'])
+
+
+function name(text,arr) {
+    for(let str of arr){
+        
+        let regex=new RegExp(str,'g')
+        let dashes='-'.repeat(str.length)
+        text=text.replace(regex,dashes)
+    }
+    console.log(text)
+}
+
+('roses are red, violets are blue', ['violets' ,'are','red'])*/
+
