@@ -1,0 +1,9 @@
+{
+  "name": "capitalize-words",
+  "version": "0.0.0",
+  "description": "CapitalizeWords",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

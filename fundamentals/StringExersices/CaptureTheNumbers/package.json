@@ -1,0 +1,9 @@
+{
+  "name": "capture-the-numbers",
+  "version": "0.0.0",
+  "description": "CaptureTheNumbers",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}
