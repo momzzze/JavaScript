@@ -1,0 +1,9 @@
+{
+  "name": "find-occurances-of-word",
+  "version": "0.0.0",
+  "description": "FindOccurancesOfWord",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

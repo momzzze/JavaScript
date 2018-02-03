@@ -1,0 +1,9 @@
+{
+  "name": "find-variable-names-in-sentences",
+  "version": "0.0.0",
+  "description": "FindVariableNamesInSentences",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}
