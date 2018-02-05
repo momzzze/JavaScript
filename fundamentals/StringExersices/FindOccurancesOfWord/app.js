@@ -3,7 +3,7 @@
 function findOccurrences(str,word) {
     let text = str.toLowerCase();
     let key=word
-    let pattern = new RegExp('\\b'+key+'\\b','g')
+    let pattern = new RegExp('\\b'+key+'\\b','gi')
     let result = text.match(pattern)
     if (result!=null) {
         console.log(result.length)
