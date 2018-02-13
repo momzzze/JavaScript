@@ -1,0 +1,9 @@
+{
+  "name": "spice-must-flow",
+  "version": "0.0.0",
+  "description": "SpiceMustFlow",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

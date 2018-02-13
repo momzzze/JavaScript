@@ -1,0 +1,9 @@
+{
+  "name": "jan-s-nation",
+  "version": "0.0.0",
+  "description": "Jan'sNation",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

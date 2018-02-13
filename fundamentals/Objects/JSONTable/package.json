@@ -1,0 +1,9 @@
+{
+  "name": "jsontable",
+  "version": "0.0.0",
+  "description": "JSONTable",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

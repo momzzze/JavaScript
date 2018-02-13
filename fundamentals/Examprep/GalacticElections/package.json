@@ -1,0 +1,9 @@
+{
+  "name": "galactic-elections",
+  "version": "0.0.0",
+  "description": "GalacticElections",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

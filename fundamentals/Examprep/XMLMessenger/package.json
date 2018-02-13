@@ -1,0 +1,9 @@
+{
+  "name": "xmlmessenger",
+  "version": "0.0.0",
+  "description": "XMLMessenger",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

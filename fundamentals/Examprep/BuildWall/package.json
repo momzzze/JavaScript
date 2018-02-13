@@ -1,0 +1,9 @@
+{
+  "name": "build-wall",
+  "version": "0.0.0",
+  "description": "BuildWall",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

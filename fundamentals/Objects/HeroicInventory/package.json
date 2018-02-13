@@ -1,0 +1,9 @@
+{
+  "name": "heroic-inventory",
+  "version": "0.0.0",
+  "description": "HeroicInventory",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

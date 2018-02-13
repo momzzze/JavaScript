@@ -1,0 +1,9 @@
+{
+  "name": "the-hungry-progrogramer",
+  "version": "0.0.0",
+  "description": "TheHungryProgrogramer",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "expedition",
+  "version": "0.0.0",
+  "description": "Expedition",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}

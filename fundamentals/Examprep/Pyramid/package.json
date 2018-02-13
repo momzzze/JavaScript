@@ -1,0 +1,9 @@
+{
+  "name": "pyramid",
+  "version": "0.0.0",
+  "description": "Pyramid",
+  "main": "app.js",
+  "author": {
+    "name": "NikolaNinov"
+  }
+}
