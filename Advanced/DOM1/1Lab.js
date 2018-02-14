@@ -23,3 +23,17 @@
             arr[i].style.backgroundColor='Teal';
         }
     }
+    
+    function countdown(sec) {
+        let minutes=Math.floor(sec/60)
+        let seconds=sec%60
+        let time=minutes+':'+(seconds<10?'0'+seconds:seconds)
+        document.getElementById('time').value=time
+       setInterval(()=>{
+           sec--
+            minutes=Math.floor(sec/60)
+            seconds=sec%60
+            time=minutes+':'+(seconds<10?'0'+seconds:seconds)
+           document.getElementById('time').value=time
+       },1000)
+    }
