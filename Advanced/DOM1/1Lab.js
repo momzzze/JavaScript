@@ -37,3 +37,12 @@
            document.getElementById('time').value=time
        },1000)
     }
+    
+    function sum() {
+        let elements=document.getElementsByTagName('td')
+        let sum=0
+        for (var i = 1; i < elements.length; i+=2) {
+            sum+=Number(elements[i].textContent)
+        }
+        elements[elements.length-1].textContent=sum
+    }

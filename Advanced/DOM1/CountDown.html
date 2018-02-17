@@ -7,6 +7,18 @@
 <body>
 <input type="text" id="time" style="border:3px solid blue; text-align:center; font-size:2em;" disabled="true"/>
 <script>window.onload = function() { countdown(600); }</script>
-<script src="1Lab.js"></script>
+<script>
+    function solution(id) {
+        let arr=[]
+        let text=document.getElementById(id).textContent
+        let regex=/\((.+?)\)/g
+
+
+        while(match=regex.exec(text)){
+            arr.push(match[1])
+        }return arr.join("; ")
+    }
+    console.log(solution('content'))
+</script>
 </body>
 </html>
