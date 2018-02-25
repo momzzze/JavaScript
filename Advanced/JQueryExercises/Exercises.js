@@ -113,6 +113,35 @@ function wikiParser(selector) {
 
 
 
-function createBook() {
-    // TODO
+function createBook(selector,title,author,isbn) {
+    let id=1
+    let bookSelector=$('<div>')
+    let container=$(selector)
+    bookSelector.attr('id',`book${id}`)
+    bookSelector.css('border','none')
+
+    $(`<p class="title">${title}</p>`).appendTo(bookSelector)
+    $(`<p class="author">${author}</p>`).appendTo(bookSelector)
+    $(`<p class="isbn">${isbn}</p>`).appendTo(bookSelector)
+
+    let selectBtn=$('<button>Select</button>')
+    let deSelectBtn=$('<button>Deselect</button>')
+
+    selectBtn.on('click',function () {
+        bookSelector.css("border","2px solid blue")
+    })
+    deSelectBtn.on("click",function () {
+        bookSelector.css("border","none")
+    })
+    selectBtn.appendTo(bookSelector)
+    deSelectBtn.appendTo(bookSelector)
+
+    bookSelector.appendTo(container)
+    id++
 }
+
+
+function domSearch() {
+
+}
+
