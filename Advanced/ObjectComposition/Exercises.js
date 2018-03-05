@@ -139,3 +139,119 @@ extensibleObject.extend({
 /*console.log(extensibleObject);*/
 
 
+function traverseDom(selector) {
+
+    let targetNode=$(selector);
+    let maxDepth=0;
+    let deepestNode=targetNode;
+
+    depthFirstSearch(0,targetNode);
+    hightFromBottomToTarget(maxDepth,deepestNode);
+
+    function hightFromBottomToTarget(nodesRemaining,currentNode) {
+        if(nodesRemaining === -1){
+            return;
+        }
+        currentNode.addClass('highlight');
+            let parent=currentNode.parent();
+        hightFromBottomToTarget(nodesRemaining - 1, $(parent))
+    }
+
+    function depthFirstSearch(depth,currentNode) {
+        if(depth > maxDepth){
+            maxDepth=depth;
+            deepestNode=currentNode
+        }
+
+        let children=currentNode.children();
+        for (let obj of children) {
+            depthFirstSearch(depth+1,$(obj))
+        }
+    }
+}
+
+
+
+function result() {
+    let id=0;
+    let allReports=new Map;
+    let element=null;
+    let module = {
+
+
+        report: (author, description, isReproducible, severity) => {
+            allReports.set(id++,{
+                author,
+                description,
+                isReproducible,
+                severity,
+                status:'Open'
+            })
+            this.output()
+        },
+        setStatus: (id, newStatus) => {
+            allReports.get(id).status=newStatus;
+        },
+        remove: (id)=>{
+            allReports.delete(id)
+        },
+        sort: (criteria)=>{
+
+            [...allReports].sort((a,b)=>{
+                if(criteria=='ID'||!criteria){
+                return a[0]-b[0]
+            }
+            else {
+                return a[1][criteria]-b[1][criteria]
+            }})
+        },
+        output: (selector)=>{
+            element=$(selector);
+            for (let id in allReports) {
+                let report =allReports.get(id)
+                element.append($('<div>').setAttribute('id', `report_${id}`)
+                    .addClass('report')
+                    .append($('<div>').addClass('body'))
+                    .append($(`<p>${report.description}</p>`))
+                    .append($('<div>').addClass('title'))
+                    .append($(`<span>`).addClass('author').text(`Submitted by: ${report.author}`))
+                    .append($(`<span>`).addClass('status').text(`${report.status} | ${report.severity}`))
+                )
+
+            }
+        }
+    }
+    return module
+
+};
+
+function solve() {
+
+    let arr = [];
+
+    let obj = {
+        add: function add(element) {
+
+            arr.push(element);
+            arr.sort((a, b) => a - b);
+            this.size++;
+        },
+        remove: function remove(index) {
+
+            if (index >= 0 && index < arr.length) {
+                arr.splice(index, 1);
+                this.size--;
+            }
+        },
+        get: function get(index) {
+
+            if (index >= 0 && index < arr.length) {
+
+                return(arr[index]);
+            }
+        },
+
+        size: 0
+    }
+    return obj;
+}
