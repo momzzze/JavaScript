@@ -32,4 +32,4 @@ function createCard(card,suit) {
         }}
 }
 
-console.log(''+createCard('A','S'))
+/*console.log(''+createCard('A','S'))*/
