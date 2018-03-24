@@ -1,18 +1,53 @@
-const URL='https://console.firebase.google.com/project/phonebookdemo-55250/database/phonebookdemo-55250/data'
-$('#btnLoad').on('click',loadData)
+function attachEvents() {
+    $('#btnLoad').click(loadContacts);
+    $('#btnCreate').click(createContact);
+    let phonebookElement = $("#phonebook");
 
-function loadData() {
-    $.ajax({
-        method:'GET',
-        url:URL+'.json'
-    }).then(handleSucces)
-        .catch(handleError)
+    let baseServiceUrl = 'https://phonebookdemo-55250.firebaseio.com/phonebook';
 
-    function handleSucces(res) {
-        console.log(res)
+    function loadContacts() {
+        phonebookElement.empty();
+        $.get(baseServiceUrl + '.json')
+            .then(displayContacts)
+            .catch(displayError);
     }
-}
 
-function handleError(err) {
-    console.log(err)
-}
+    function displayContacts(contacts) {
+        for (let key in contacts) {
+            let person = contacts[key]['person'];
+            let phone = contacts[key]['phone'];
+            let li = $("<li>");
+            li.text(person + ': ' + phone + ' ');
+            phonebookElement.append(li);
+            li.append($("<button>Delete</button>")
+                .click(deleteContact.bind(this, key)));
+        }
+    }
+
+    function displayError() {
+        phonebookElement.append($(`<li>`).text('Error'));
+    }
+
+    function createContact() {
+        let newContactJSON = JSON.stringify({
+            person: $('#person').val(),
+            phone: $('#phone').val()
+        });
+        $.post(baseServiceUrl + '.json', newContactJSON)
+            .then(loadContacts)
+            .catch(displayError);
+        $('#person').val('');
+        $('#phone').val('');
+
+    }
+
+    function deleteContact(key) {
+        let request = {
+            method: 'DELETE',
+            url: baseServiceUrl + '/' + key + '.json'
+        };
+        $.ajax(request)
+            .then(loadContacts)
+            .catch(displayError);
+    }
+});
