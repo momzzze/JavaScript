@@ -50,4 +50,4 @@ function attachEvents() {
             .then(loadContacts)
             .catch(displayError);
     }
-});
+}
