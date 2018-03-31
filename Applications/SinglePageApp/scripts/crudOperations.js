@@ -35,9 +35,15 @@ function registerUser() {
 
 
 function listBooks() {
-    //TODO
-    // GET -> BASE_URL + 'appdata/' + APP_KEY + '/books'
-    // displayPaginationAndBooks(res.reverse())
+    $.ajax({
+        url: BASE_URL + 'appdata/' + APP_KEY + '/books',
+        headers: {'Authorization': 'Kinvey ' + sessionStorage.getItem('authToken')}
+    }).then(function (res) {
+        showView('viewBooks')
+        displayPaginationAndBooks(res.reverse())
+    }).catch(handleAjaxError)
+
+    //
 }
 
 
@@ -95,12 +101,25 @@ function displayPaginationAndBooks(books) {
         next: 'Next',
         prev: 'Prev',
         onPageClick: function (event, page) {
+            console.log(page)
+            let table = $('#books > table')
+            table.find('tr').each((index,el)=>{
+                if(index>0){
+                    $(el).remove()
+                }
+            })
             // TODO remove old page books
             let startBook = (page - 1) * BOOKS_PER_PAGE
             let endBook = Math.min(startBook + BOOKS_PER_PAGE, books.length)
             $(`a:contains(${page})`).addClass('active')
             for (let i = startBook; i < endBook; i++) {
-                // TODO add new page books
+                table.append(
+                    $('<tr>').append($(`<td>${books[i].title}</td>`))
+                        .append($(`<td>${books[i].author}</td>`))
+                        .append($(`<td>${books[i].description}</td>`))
+                    )
+
+
             }
         }
     })
