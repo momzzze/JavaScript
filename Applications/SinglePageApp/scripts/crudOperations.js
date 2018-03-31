@@ -48,25 +48,60 @@ function listBooks() {
 
 
 function createBook() {
-    // TODO
-    // POST -> BASE_URL + 'appdata/' + APP_KEY + '/books'
-    // showInfo('Book created.')
+    let author=$('#formCreateBook input[name=author]').val()
+    let title=$('#formCreateBook input[name=title]').val()
+    let description=$('#formCreateBook textarea[name=description]').val()
+    $.ajax({
+        method:'POST',
+        url:BASE_URL + 'appdata/' + APP_KEY + '/books',
+        data:{author,title,description},
+        headers:{'Authorization': 'Kinvey ' + sessionStorage.getItem('authToken')}
+    }).then(function (res) {
+        listBooks()
+        showInfo('Book created.')
+    }).catch(handleAjaxError)
+
+
 }
 
 function deleteBook(book) {
-    // TODO
-    // DELETE -> BASE_URL + 'appdata/' + APP_KEY + '/books/' + book._id
-    // showInfo('Book deleted.')
+    $.ajax({
+        method:'DELETE',
+        url:BASE_URL + 'appdata/' + APP_KEY + '/books/' + book._id,
+        headers:{'Authorization': 'Kinvey ' + sessionStorage.getItem('authToken')}
+    }).then(function (res) {
+        listBooks()
+        showInfo('Book deleted.')
+    }).catch(handleAjaxError)
+
 }
 
 function loadBookForEdit(book) {
-    // TODO
+    showView('viewEditBook')
+    $('#formEditBook input[name=id]').val(book._id)
+    $('#formEditBook input[name=title]').val(book.title)
+    $('#formEditBook input[name=author]').val(book.author)
+    $('#formEditBook textarea[name=description]').val(book.description)
 }
 
 function editBook() {
-    // TODO
-    // PUT -> BASE_URL + 'appdata/' + APP_KEY + '/books/' + book._id
-    // showInfo('Book edited.')
+
+    let id=$('#formEditBook input[name=id]').val()
+    let title=$('#formEditBook input[name=title]').val()
+    let author=$('#formEditBook input[name=author]').val()
+    let description=$('#formEditBook textarea[name=description]').val()
+
+    $.ajax({
+        method:'PUT',
+        utl:BASE_URL + 'appdata/' + APP_KEY + '/books/' + id,
+        headers:{'Authorization': 'Kinvey ' + sessionStorage.getItem('authToken')},
+        data:{title, author, description}
+    }).then(function (res) {
+        listBooks()
+        showView('viewBooks')
+        showInfo('Book edited.')
+    }).catch(handleAjaxError)
+
 }
 
 function saveAuthInSession(userInfo) {
@@ -101,25 +136,35 @@ function displayPaginationAndBooks(books) {
         next: 'Next',
         prev: 'Prev',
         onPageClick: function (event, page) {
-            console.log(page)
             let table = $('#books > table')
-            table.find('tr').each((index,el)=>{
-                if(index>0){
+            table.find('tr').each((index, el) => {
+                if(index > 0) {
                     $(el).remove()
                 }
             })
-            // TODO remove old page books
             let startBook = (page - 1) * BOOKS_PER_PAGE
             let endBook = Math.min(startBook + BOOKS_PER_PAGE, books.length)
             $(`a:contains(${page})`).addClass('active')
             for (let i = startBook; i < endBook; i++) {
+                let tr = $(`<tr>`)
                 table.append(
-                    $('<tr>').append($(`<td>${books[i].title}</td>`))
+                    $(tr).append($(`<td>${books[i].title}</td>`))
                         .append($(`<td>${books[i].author}</td>`))
                         .append($(`<td>${books[i].description}</td>`))
+                )
+                if(books[i]._acl.creator === sessionStorage.getItem('userId')) {
+                    $(tr).append(
+                        $(`<td>`).append(
+                            $(`<a href="#">[Edit]</a>`).on('click', function () {
+                                loadBookForEdit(books[i])
+                            })
+                        ).append(
+                            $(`<a href="#">[Delete]</a>`).on('click', function () {
+                                deleteBook(books[i])
+                            })
+                        )
                     )
-
-
+                }
             }
         }
     })
