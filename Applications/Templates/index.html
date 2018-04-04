@@ -7,16 +7,16 @@
     <script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
 </head>
 <body>
-    <script>
-        (async function () {
-            let source=await $.get('template.html')
-            let template=Handlebars.compile(source)
-            let context={
-                title: "My new Post",
-                body: "This is my handlebars post"
-            }
-            let html=template(context)
-            $('body').append(html)
-        }())
-    </script>
+<script>
+    (async function () {
+        let source=await $.get('template.html')
+        let template=Handlebars.compile(source)
+        let context={
+            title: "My new Post",
+            body: "This is my handlebars post"
+        }
+        let html=template(context)
+        $('body').append(html)
+    }())
+</script>
 </body>
