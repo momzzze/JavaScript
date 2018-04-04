@@ -1,0 +1,11 @@
+function startApp() {
+    showHideLinks()
+    attachEvents()
+
+}
+
+
+
+
+
+
