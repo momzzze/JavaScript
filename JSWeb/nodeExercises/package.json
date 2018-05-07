@@ -4,8 +4,14 @@
   "description": "exercises",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
+  "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "act": "0.0.6",
+    "chai": "4.1.2",
+    "express": "4.16.3"
+  }
 }

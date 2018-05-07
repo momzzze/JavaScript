@@ -1,0 +1,18 @@
+let test=require('./storage/db');
+test.put('first','first value');
+test.put('second','second value');
+test.put('third','third value');
+console.log(test.getAll());
+test.update('first','first value modified');
+console.log(test.getAll());
+test.put('forth','forth value');
+console.log(test.getAll());
+test.delete('forth');
+console.log(test.getAll());
+test.save();
+test.clear();
+test.load();
+test.put('six','six value');
+test.put('seven','seven value');
+test.put('eight','eight value');
+console.log(test.getAll());
