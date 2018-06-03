@@ -1,0 +1,13 @@
+{
+  "name": "NodeWebServer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start":"node server.js",
+    "debug":"node --nolazy --inspect-brk=9998 server.js"    
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
