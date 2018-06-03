@@ -21,13 +21,9 @@
 
 const mongoose=require('mongoose');
 let connectionString='mongodb://localhost:27017/cats';
+const Cat=require('./models/Cat');
 
-let catSchema=new mongoose.Schema({
-    name:{ type: String,required:true},
-    age:{type:Number,required:true},
-    color:{type:String}
-})
-let Cat=mongoose.model('Cat',catSchema)
+
 
 //let Cat=mongoose.model('Cat',{
 //  name:{ type: String,required:true},
@@ -45,7 +41,13 @@ let Cat=mongoose.model('Cat',catSchema)
 
 mongoose.connect(connectionString).then(()=>{
 
-    Cat.find({}).then(cats=>console.log(cats));
+    Cat.find({}).then(cats=>{
+        for(let cat of cats){
+            console.log(cat._id);
+            
+        }
+    });
+    
       
 });
 
