@@ -8,7 +8,7 @@ import {
 
 import Navigation from './Navigation';
 import Home from './Home'
-import Login from './SignUp';
+import SignUpForm from './SignUp';
 import Register from './SignIn';
 import ChangePass from './ChangePass';
 import ResetPass from './PasswordForget';
@@ -30,7 +30,7 @@ const App=()=>
 
       <Route
         exact path={routes.SIGN_UP}
-        component={()=><Login />}
+        component={()=><SignUpForm />}
       />
 
       <Route
