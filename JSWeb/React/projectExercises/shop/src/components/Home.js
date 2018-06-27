@@ -8,7 +8,7 @@ export default class Landing extends Component{
                
                 <h1>Loading Main page</h1>
 
-                <p>Loadign page for registrated users</p>
+                <p>Loading page for registrated users</p>
             </div>
         )
     }
