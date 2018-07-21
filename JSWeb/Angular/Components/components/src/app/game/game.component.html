@@ -1,0 +1,25 @@
+<input [(ngModel)]="username" placeholder="name">
+<button>Send</button>
+<h1 *ngIf='username'c >Your name is: {{username}}</h1>
+
+<div *ngIf="games">
+  <ul>
+    <li *ngFor="let game of games; let i=index">
+      <h1 [class.myStyle]=isShown>{{game.title | titlecase}}</h1>
+      <br>
+      <h1>{{i+1}}</h1>
+      <br>
+      <h5>With id: {{game.id}}</h5>
+      <br>
+      <img [src]='game.image' alt="picture">
+      <br>
+      <app-subscribe (notification)="notify($event)" [subGame]="game"></app-subscribe>
+    </li>
+  </ul>
+  <button (click)="showContacts()">Show contacts</button>
+</div>
+
+<div *ngIf="isShown">
+  <h1> Our contacts.....</h1>
+</div>
+
