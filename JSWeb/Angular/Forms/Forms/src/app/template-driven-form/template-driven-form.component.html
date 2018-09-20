@@ -1,0 +1,21 @@
+<form #form="ngForm" (ngSubmit)="login(form.value)">
+    <div class="form-group">
+        <label for="">Processor</label>
+        <input type="email" (click)="field(emailField)" class="form-control"   placeholder="email address" [(ngModel)]="model.processor" name="processor"> 
+      
+      </div>
+
+  <div class="form-group">
+    <label for="">Email</label>
+    <input type="email" (click)="field(emailField)" class="form-control" #emailField="ngModel" name="email" placeholder="email address" ngModel required> 
+    <div class="alert-danger" *ngIf="emailField.touched && emailField.errors.required">Email is required</div>
+  </div>
+
+  <div class="form-group">
+    <label for="">Password</label>
+    <input type="password" class="form-control" #passField="ngModel" name="password" placeholder="password" ngModel required>
+    <div class="alert-danger" *ngIf="passField.touched && passField.errors.required">Password is required</div>
+  </div>
+
+  <button [disabled]="form.invalid"  type="submit" class="btn btn-primary">Submit</button>
+</form>
