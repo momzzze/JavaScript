@@ -1,0 +1,7 @@
+{
+    "type": "node",
+    "request": "launch",
+    "name": "Launch",
+    "runtimeVersion": "7.10.1",
+    "program": "${workspaceFolder}/exercises.js"
+}
