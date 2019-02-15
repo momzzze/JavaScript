@@ -68,5 +68,23 @@ module.exports = {
             res.locals.globalError = e;
             res.render('users/login');
         }
+    },
+    blockUser: async (req, res) => {
+        try {
+            req.user.blockedUsers.push(req.params.username);
+            await req.user.save();
+            res.redirect(`/thread/${req.params.username}`);
+        } catch (err) {
+            console.log(err)
+        }
+    },
+    unblockUser: async (req, res) => {
+        try {
+            req.user.blockedUsers=req.user.blockedUsers.filter(user=> user!== req.params.username);
+            await req.user.save();
+            res.redirect(`/thread/${req.params.username}`);
+        } catch (err) {
+            console.log(err)
+        }
     }
 };
