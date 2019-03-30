@@ -1,0 +1,6 @@
+div{
+    background-color: brown
+}
+.todo-list-item span.completed {
+    text-decoration: line-through;
+}
