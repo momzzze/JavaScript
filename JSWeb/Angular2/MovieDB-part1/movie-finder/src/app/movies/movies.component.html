@@ -11,3 +11,17 @@
       <app-movie [movie]="movie"></app-movie>
     </div>
   </div>
+
+  <h1>Popular Kids Movies</h1>
+  <div class="row">
+    <div class="col-lg-2" *ngFor="let movie of popularKids">
+      <app-movie [movie]="movie"></app-movie>
+    </div>
+  </div>
+
+  <h1>Best drama films</h1>
+  <div class="row">
+    <div class="col-lg-2" *ngFor="let movie of dramaFilms">
+      <app-movie [movie]="movie"></app-movie>
+    </div>
+  </div>
