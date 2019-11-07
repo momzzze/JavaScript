@@ -29,86 +29,106 @@ function getLocation(location) {
     }
 }
 
-var templateOne = React.createElement(
-    'div',
-    null,
-    React.createElement(
-        'h1',
-        null,
-        app.title
-    ),
-    app.subtitle && React.createElement(
-        'p',
-        null,
-        app.subtitle
-    ),
-    React.createElement(
-        'p',
-        null,
-        app.options.length > 0 ? 'Here are your options' : 'No options'
-    ),
-    React.createElement(
-        'ol',
-        null,
-        React.createElement(
-            'li',
-            null,
-            'Item one'
-        ),
-        React.createElement(
-            'li',
-            null,
-            'Item two'
-        )
-    )
-);
-var count = 0;
+var onFormSubmit = function onFormSubmit(e) {
+    e.preventDefault();
 
-var addOne = function addOne() {
-    count++;
-    renderCounterApp();
+    var option = e.target.elements.option.value;
+
+    if (option) {
+        app.options.push(option);
+        e.target.elements.option.value = '';
+        renderTemplate();
+    }
 };
-var minusOne = function minusOne() {
-    count--;
-    renderCounterApp();
-};
-var reset = function reset() {
-    count = 0;
-    renderCounterApp();
+var removeAll = function removeAll() {
+    app.options = [];
+    renderTemplate();
 };
 
+// let templateOne = (
+//     <div>
+//         <h1>{app.title}</h1>
+//         {app.subtitle && <p>{app.subtitle}</p>}
+//         <p>{app.options.length > 0 ? 'Here are your options' : 'No options'}</p>
+//         <p>{app.options.length}</p>
+
+//         <ol>
+//             <li>Item one</li>
+//             <li>Item two</li>
+//         </ol>
+
+//         <form action="" onSubmit={onFormSubmit}>
+//             <input type="text" name="option" />
+//             <button>Add Option</button>
+//         </form>
+//     </div>
+// );
 var appRoot = document.getElementById('app');
+var numbers = [55, 101, 1000];
 
-var renderCounterApp = function renderCounterApp() {
-    var templateTwo = React.createElement(
+var renderTemplate = function renderTemplate() {
+    var templateOne = React.createElement(
         'div',
         null,
         React.createElement(
             'h1',
             null,
-            'Count: ',
-            count
+            app.title
+        ),
+        app.subtitle && React.createElement(
+            'p',
+            null,
+            app.subtitle
+        ),
+        React.createElement(
+            'p',
+            null,
+            app.options.length > 0 ? 'Here are your options' : 'No options'
+        ),
+        React.createElement(
+            'p',
+            null,
+            app.options.length
         ),
         React.createElement(
             'button',
-            { onClick: addOne },
-            '+1'
+            { onClick: removeAll },
+            'Remove All Options'
+        ),
+        numbers.map(function (n) {
+            return React.createElement(
+                'p',
+                { key: n },
+                'Number: ',
+                n
+            );
+        }),
+        React.createElement(
+            'ol',
+            null,
+            app.options.map(function (i) {
+                return React.createElement(
+                    'li',
+                    { key: i },
+                    i
+                );
+            })
         ),
         React.createElement(
-            'button',
-            { onClick: minusOne },
-            '-1'
-        ),
-        React.createElement(
-            'button',
-            { onClick: reset },
-            'reset'
+            'form',
+            { action: '', onSubmit: onFormSubmit },
+            React.createElement('input', { type: 'text', name: 'option' }),
+            React.createElement(
+                'button',
+                null,
+                'Add Option'
+            )
         )
     );
-
-    ReactDOM.render(templateTwo, appRoot);
+    ReactDOM.render(templateOne, appRoot);
 };
-renderCounterApp();
+
+renderTemplate();
 // let templateTwo = (
 
 //     <div>

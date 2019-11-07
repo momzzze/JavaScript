@@ -22,48 +22,78 @@ function getLocation(location) {
     }
 }
 
-let templateOne = (
-    <div>
-        <h1>{app.title}</h1>
-        {app.subtitle && <p>{app.subtitle}</p>}
-        <p>{app.options.length > 0 ? 'Here are your options' : 'No options'}</p>
-        <ol>
-            <li>Item one</li>
-            <li>Item two</li>
-        </ol>
-    </div>
-);
-let count = 0;
+const onFormSubmit = (e) => {
+    e.preventDefault();
 
-const addOne = () => {
-    count++;
-    renderCounterApp();
+    const option = e.target.elements.option.value;
+
+    if (option) {
+        app.options.push(option);
+        e.target.elements.option.value = '';
+        renderTemplate();
+    }
 }
-const minusOne = () => {
-    count--;
-    renderCounterApp();
-}
-const reset = () => {
-    count=0;    
-    renderCounterApp();
+const removeAll = () => {
+    app.options = [];
+    renderTemplate();
+
 }
 
-let appRoot = document.getElementById('app')
+// let templateOne = (
+//     <div>
+//         <h1>{app.title}</h1>
+//         {app.subtitle && <p>{app.subtitle}</p>}
+//         <p>{app.options.length > 0 ? 'Here are your options' : 'No options'}</p>
+//         <p>{app.options.length}</p>
 
-const renderCounterApp = () => {
-    let templateTwo = (
+//         <ol>
+//             <li>Item one</li>
+//             <li>Item two</li>
+//         </ol>
 
+//         <form action="" onSubmit={onFormSubmit}>
+//             <input type="text" name="option" />
+//             <button>Add Option</button>
+//         </form>
+//     </div>
+// );
+let appRoot = document.getElementById('app');
+const numbers = [55, 101, 1000];
+
+
+const renderTemplate = () => {
+    const templateOne = (
         <div>
-            <h1>Count: {count}</h1>
-            <button onClick={addOne}>+1</button>
-            <button onClick={minusOne}>-1</button>
-            <button onClick={reset}>reset</button>
-        </div>
-    )
+            <h1>{app.title}</h1>
+            {app.subtitle && <p>{app.subtitle}</p>}
+            <p>{app.options.length > 0 ? 'Here are your options' : 'No options'}</p>
+            <p>{app.options.length}</p>
 
-    ReactDOM.render(templateTwo, appRoot)
-}
-renderCounterApp();
+            <button onClick={removeAll}>Remove All Options</button>
+
+            {
+                numbers.map((n) => {
+                    return <p key={n}>Number: {n}</p>
+                })
+            }
+
+            <ol>
+                {app.options.map((i) => {
+                    return <li key={i}>{i}</li>
+                })}
+            </ol>
+
+            <form action="" onSubmit={onFormSubmit}>
+                <input type="text" name="option" />
+                <button>Add Option</button>
+            </form>
+        </div>
+    );
+    ReactDOM.render(templateOne, appRoot);
+};
+
+
+renderTemplate();
 // let templateTwo = (
 
 //     <div>
