@@ -1,0 +1,32 @@
+<label>Username</label>
+<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)"> -->
+
+<input type="text" class="form-control" [(ngModel)]="username" ngModel="somefield">
+<p>{{username}}</p>
+<br>
+<button class="btn btn-primary" [disabled]="username === ''" (click)="onSubmitValidation($event)">Submit
+</button>
+<div *ngIf="!isEmpty">
+  <button class="btn btn-primary" (click)="deleteUsername()">LogOut
+  </button>
+</div>
+
+<br><br>
+<label>Server Name</label>
+<input type="text" class="form-control" [(ngModel)]="serverName">
+<!-- <p>{{serverName}}</p> -->
+<br>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">
+  Add Server
+</button>
+<br><br><br>
+<p [innerText]="allowNewServer"></p>
+<p>{{serverCreationStatus}}</p>
+<p>{{checkUsername}}</p>
+<p *ngIf="serverCreated; else noServer">Server was created, server name is {{serverName}}</p>
+<ng-template #noServer>
+  <p>
+    No server was created!
+  </p>
+</ng-template>
+<app-server *ngFor="let server of servers"></app-server>

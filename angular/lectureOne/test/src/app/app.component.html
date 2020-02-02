@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>{{title}}</h1>
+      <input #titleInput>
+
+      <button (click)="title = titleInput.value">Change Title</button>
+      <br>
+      <br>
+      <div [attr.role]="myAriaRole">
+        <p>this is the admin</p>
+      </div>
+      <div [class.extra-sparkle]="isDelightful" (mouseover)="onHover()">
+        <p>this is the delightful</p>
+      </div>
+
+      <div [style.width.px]="mySize"[style.height.px]="mySize">
+        <p>this is the width in pixels</p>
+      </div>
+
+     
+
+
+
+      <input type="text" [(ngModel)]="title">
+      <br>
+      <button (click)="toggleVisible()">Button</button>
+      <div *ngIf="visible">Visible</div>
+      <div *ngIf="!visible">Not Visible</div>
+      <!-- <app-about></app-about> -->
+      <ul>
+        <li *ngFor="let user of users">
+          <app-user [info]="user"></app-user>
+        </li>       
+      </ul>
+    </div>
+  </div>
+</div>
