@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { CausesService } from '../causes.service';
 import { ICause } from '../shared/interfaces/cause';
 
@@ -8,6 +8,8 @@ import { ICause } from '../shared/interfaces/cause';
   styleUrls: ['./right.component.css']
 })
 export class RightComponent implements OnInit {
+
+  @ViewChild('amountInput', { static: false }) amountInput: ElementRef<HTMLInputElement>;
   @Input() selectedCause2: ICause;
 
   get color() {
@@ -15,7 +17,7 @@ export class RightComponent implements OnInit {
       return 'green'
     }
     if (
-      this.selectedCause.collectedAmount < 2*(this.selectedCause.neededAmount / 3) &&
+      this.selectedCause.collectedAmount < 2 * (this.selectedCause.neededAmount / 3) &&
       this.selectedCause.collectedAmount > (this.selectedCause.neededAmount / 3)
     ) {
       return 'yellow'
@@ -30,5 +32,10 @@ export class RightComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  makeDonation() {
+    this.causesService.donate(+this.amountInput.nativeElement.value).subscribe(() => {
+      this.causesService.loadCauses();
+      this.amountInput.nativeElement.value = '';
+    });
+  }
 }

@@ -1,0 +1,7 @@
+<div >
+    <ul *ngFor="let user of users">
+    <li>{{user.name}} - {{user.email}}</li>
+    <button (click)="userEdit(user.id)">Edit</button>
+    <button (click)="userDelete(user.id)">Remove</button>
+    </ul>
+</div>

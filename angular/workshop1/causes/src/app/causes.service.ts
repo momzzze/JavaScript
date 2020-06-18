@@ -19,4 +19,10 @@ export class CausesService {
       this.causes = causes;
     });
   }
+
+  donate(amount: number) {
+   return this.http.put<ICause>(`http://localhost:3000/causes/${this.selectedCause._id}`, {
+      body: { collectedAmount: this.selectedCause.collectedAmount + amount }
+    });
+  }
 }

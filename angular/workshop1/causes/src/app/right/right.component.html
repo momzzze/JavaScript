@@ -30,11 +30,11 @@
             <label class="sr-only" for="donatedAmount"></label>
             <div class="input-group">
               <div class="input-group-addon">$</div>
-              <input type="text" class="form-control" id="donatedAmount" placeholder="Amount">
+              <input #amountInput type="number" class="form-control" id="donatedAmount" placeholder="Amount">
               <div class="input-group-addon">.00</div>
             </div>
           </div>
-          <button type="submit" class="btn btn-success">Make donation</button>
+          <button type="button" class="btn btn-success" (click)="makeDonation()">Make donation</button>
         </form>
       </div>
     </div>

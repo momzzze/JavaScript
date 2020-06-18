@@ -1,0 +1,11 @@
+<div>
+  <label for="name">Name</label>
+  <input type="text" name="name" #name>
+
+  <label for="password">Password</label>
+  <input type="text" name="password" #password>
+
+  <label for="email">Email</label>
+  <input type="text" name="email" #email>
+  <button (click)="add(name,password,email)">Add user</button>
+</div>
