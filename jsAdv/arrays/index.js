@@ -95,17 +95,43 @@
 // solve(["John", "Bob", "Christina", "Ema"]);
 //-------------------------------------------------------------------------------7
 
-function solve(arr) {
-  arr.sort((a, b) => a - b);
-  let result = [];
+// function solve(arr) {
+//   arr.sort((a, b) => a - b);
+//   let result = [];
 
-  while (arr.length > 0) {
-    result.push(arr.shift());
-    if (arr.length !== 0) {
-      result.push(arr.pop());
-    }
-  }
+//   while (arr.length > 0) {
+//     result.push(arr.shift());
+//     if (arr.length !== 0) {
+//       result.push(arr.pop());
+//     }
+//   }
 
-  return result;
+//   return result;
+// }
+// solve([1, 65, 3, 52, 48, 63, 31, -3, 18, 56]);
+//-------------------------------------------------------------------------------8
+// function solve(arr) {
+//   let twoCriteriaSort = (a, b) => a.length - b.length || a.localCompare(b);
+//   let result = arr.sort(twoCriteriaSort);
+//   console.log(result.join('\n'));
+// }
+
+// function sortArray(input) {
+//   input.sort(twoCriteriaSort);
+//   input.forEach(el => console.log(el));
+
+//   function twoCriteriaSort(cur, next) {
+//     if (cur.length === next.length) {
+//       return cur.localeCompare(next);
+//     }
+//     return cur.length - next.length;
+//   }
+// }
+
+
+// sortArray(['Isacc', 'Theodor', 'Jack', 'Harrison', 'George']);
+//-------------------------------------------------------------------------------9
+
+function solve(){
+  
 }
-solve([1, 65, 3, 52, 48, 63, 31, -3, 18, 56]);
