@@ -132,6 +132,109 @@
 // sortArray(['Isacc', 'Theodor', 'Jack', 'Harrison', 'George']);
 //-------------------------------------------------------------------------------9
 
-function solve(){
-  
+// function solve(matrix) {
+//   let magicSum = Number.MIN_SAFE_INTEGER;
+//   let isMagicMatrix = true;
+//   for (let row = 0; row < matrix.length; row++) {
+//     // let colSum = 0;
+//     let sum = 0;
+//     for (let col = 0; col < matrix[row].length; col++) {
+//       let el = matrix[row][col];
+//       sum += el;
+//       // let colEl = matrix[col][row];
+//       // colSum += colEl;
+//     }
+//     if (magicSum === Number.MIN_SAFE_INTEGER) {
+//       magicSum = sum;
+//     }
+//     if (sum !== magicSum) {
+//       isMagicMatrix = false;
+//     }
+//   }
+
+//   for (let col = 0; col < matrix[0].length; col++) {
+
+//     let sum = 0;
+
+//     for (let row = 0; row < matrix.length; row++) {
+//       let el = matrix[row][col];
+//       sum += el;
+//     }
+//     if (sum !== magicSum) {
+//       isMagicMatrix = false;
+//     }
+
+//   }
+//   return isMagicMatrix;
+// }
+
+// console.log(solve([[4, 5, 6], [6, 5, 4], [5, 5, 5]]));
+//---------------------------------------------------------------10
+function solve(movesArray) {
+  let board = [
+    ['false', 'false', 'false'],
+    ['false', 'false', 'false'],
+    ['false', 'false', 'false']
+  ];
+  let isPlayerX = true;
+
+  for (let index = 0; index < movesArray.length; index++) {
+    let movesPair = movesArray[index].split(' ').map(x => Number(x));
+    let row = movesPair[0];
+    let col = movesPair[1];
+
+    if (board[row][col] !== 'false') {
+      console.log(`This place is already taken. Please choose another!`);
+      continue;
+    }
+    board[row][col] = isPlayerX ? 'X' : 'O';
+    isPlayerX = !isPlayerX;
+    let gameEnded = hasGameEnded(board);
+    if (gameEnded) {
+      break;
+    }
+  }
+
+  for (let row = 0; row < board.length; row++) {
+    console.log(board[row].join('\t'));
+
+  }
+
+
+  function hasGameEnded(board) {
+    for (let row = 0; row < board.length; row++) {
+
+      let isSameX = board[row].every(x => x === 'X');
+      let isSameO = board[row].every(x => x === 'O');
+
+      if (isSameX || isSameO) {
+        console.log(`Player ${isSameX ? 'X' : 'O'} wins!`);
+        return true;
+
+      }
+    }
+
+    for (let col = 0; col < board.length; col++) {
+      if (board[0][col] === board[1][col] && board[1][col] === board[2][col] && board[0][col] !== 'false') {
+        console.log(`Player ${board[col][0]} wins!`);
+        return true;
+      }
+    }
+
+    if (board[0][0] === board[1][1] && board[1][1] === board[2][2] && board[0][0] !== 'false') {
+      console.log(`Player ${board[0][0]} wins!`);
+      return true;
+    }
+    if (board[2][0] === board[1][1] && board[1][1] === board[0][2] && board[2][0] !== 'false') {
+      console.log(`Player ${board[2][0]} wins!`);
+      return true;
+    }
+    if (board[0].every(x => x !== 'false') && board[1].every(x => x !== 'false') && board[2].every(x => x !== 'false')) {
+      console.log(`The game ended! Nobody wins :(`);
+      return true;
+    }
+    return false;
+  }
 }
+
+solve(["0 1", "0 0", "0 2", "2 0", "1 0", "1 1", "1 2", "2 2", "2 1", "0 0"]);
