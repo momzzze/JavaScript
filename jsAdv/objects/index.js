@@ -91,6 +91,7 @@
 // console.log(solve(['Isacc / 25 / Apple, GravityGun', 'Derek / 12 / BarrelVest, DestructionSword', 'Hes / 1 / Desolator, Sentinel, Antara']);
 
 //--------------------------------5---------------------------------
+<<<<<<< Updated upstream
 function solve(arr) {
   let products = [];
   for (let i = 0; i < arr.length; i++) {
@@ -125,3 +126,74 @@ console.log(solve([
   "New York | Sample Product | 1000.1",
   "New York | Burger | 10",
 ]));
+=======
+// function solve(arr) {
+//     let products = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         let [townName, productName, productPrice] = arr[i].split(' | ');
+//         productPrice = Number(productPrice);
+
+//         if (!products.hasOwnProperty(productName)) {
+//             products[productName] = {};
+//         }
+
+//         products[productName][townName] = productPrice;
+//     }
+//     let productEntries = Object.entries(products);
+//     for (const key in products) {
+//         console.log(key)
+//     }
+//     console.log(productEntries);
+// }
+
+// solve(['Sample Town | Sample Product | 1000',
+//     'Sample Town | Orange | 2',
+//     'Sample Town | Peach | 1',
+//     'Sofia | Orange | 3',
+//     'Sofia | Peach | 2',
+//     'New York | Sample Product | 1000.1',
+//     'New York | Burger | 10']);
+
+//----------------------------------------------------6--------------------------
+// function solve(arr) {
+//     let productCatalogue = {};
+//     for (let i = 0; i < arr.length; i++) {
+//         let [productName, productPrice] = arr[i].split(' : ');
+//         productPrice = Number(productPrice);
+//         let initial = productName[0].toUpperCase();
+
+//         if (productCatalogue[initial] === undefined) {
+//             productCatalogue[initial] = {};
+//         }
+//         productCatalogue[initial][productName] = productPrice;
+//     }
+//     let result = [];
+//     let initialsSorted = Object.keys(productCatalogue).sort((a, b) => a.localeCompare(b));
+//     for (const key of initialsSorted) {
+//         let products = Object.entries(productCatalogue[key]).sort((a, b) => a[0].localeCompare(b[0]));
+//         result.push(key);
+//         let productsAsStrings = products.map(x => `  ${x[0]}: ${x[1]}`).join('\n');
+//         result.push(productsAsStrings);
+//     }
+//     return result.join('\n');
+// }
+
+// console.log(solve(['Appricot : 20.4',
+//     'Fridge : 1500',
+//     'TV : 1499',
+//     'Deodorant : 10',
+//     'Boiler : 300',
+//     'Apple : 1.25',
+//     'Anti-Bug Spray : 15',
+//     'T-Shirt : 10']));
+
+function solve(inputArr) {
+    let titles = serializeRow(inputArr[0]);
+    let rows = inputArr.slice(1).map(row => serializeRow(row).reduce(acc,el)=>acc[titles],{}).reduce((acc,el)=> ,{})
+
+
+    function serializeRow(str) {
+        return str.split(/\s*\|\s*/gim).filter(x => x !== '').map(x => isNaN(Number(x)) ? x : Number(Number(x).toFixed(2)));
+    }
+}
+>>>>>>> Stashed changes
